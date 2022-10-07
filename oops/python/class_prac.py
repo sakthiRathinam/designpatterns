@@ -36,12 +36,17 @@ class Ch(object):
         super(Ch, self).__init__()
         print("Ch")
 
+    def test_func(self):
+        print("im in Ch")
+        super().test_func()
 
 class Left(Ch):
     def __init__(self):
         super(Left, self).__init__()
 
         print("left")
+        
+    
 
 
 class Right(Parent, Ch):
@@ -49,10 +54,17 @@ class Right(Parent, Ch):
         super(Right, self).__init__()
         print("right")
 
+    def test_func(self):
+        print("im in right")
+
 class Child(Left, Right):
     def __init__(self):
-        super(Child, self).__init__()
+        super(Right, self).__init__()
         print("child")
+    #     self.test_func()
+    # def test_func(self):
+    #     print("im in child")
+    #     super().test_func()
 
 c = Child()
 print(Child.__mro__)
